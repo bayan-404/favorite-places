@@ -1,6 +1,11 @@
-export default interface Iplace {
+export interface IPlace {
     id: number;
-    name : String;
-    image: String;
-    country :String;
+    name : string,
+    image: string,
+    country : string
+}
+export interface ICard {
+    wishlist : IPlace[]
+    setWishlist : React.Dispatch<React.SetStateAction<IPlace[]>>
+    place: IPlace
 }
