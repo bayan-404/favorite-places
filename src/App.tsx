@@ -3,6 +3,7 @@ import "./App.css";
 import Card from "./Card";
 import places from "./data";
 import { IPlace } from "./types";
+import {Link} from 'react-router-dom';
 
 const App = () => {
   const [wishlist, setWishlist] = useState<IPlace[]>([]);
@@ -16,6 +17,10 @@ const App = () => {
   }, []);
 
   return (
+    <>
+    <div className="nav-bar">
+      <Link className ='wishlist-btn' to = {`wishlist`} >go to wishlist 🖤 </Link>
+    </div>
     <div className="cards">
       {places.map((place) => {
         return (
@@ -28,6 +33,7 @@ const App = () => {
         );
       })}
     </div>
+    </>
   );
 };
 
